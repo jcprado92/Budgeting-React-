@@ -1,8 +1,9 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
 import Transaction from "./Transaction";
+import AccountTotal from "./AccountTotal";
+import "./Transactions.css"
 
 const API = process.env.REACT_APP_API_URL;
 function Transactions() {
@@ -16,8 +17,9 @@ function Transactions() {
   }, []);
 
   return(
-  <div>
-    <section>{transactions.map((transaction, index) => {
+  <div className="transactions">
+    <AccountTotal transactions={transactions}/>
+    <section className="transaction-container">{transactions.map((transaction, index) => {
         return <Transaction key={index} transaction={transaction} index={index}/>})}</section>
   </div>
   ) 

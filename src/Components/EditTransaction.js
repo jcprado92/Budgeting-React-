@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -30,7 +30,7 @@ function EditTransaction() {
     axios
       .get(`${API}/transactions/${index}`)
       .then((res) => setTransaction(res.data));
-  }, []);
+  }, [index]);
 
 
   const updateTransaction = () => {
@@ -50,25 +50,9 @@ function EditTransaction() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="transactionName">Transaction Name:</label>
-        <input
-          id="item_name"
-          value={transaction.item_name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Transaction"
-          required
-        />
-        <label htmlFor="amount">Amount:</label>
-        <input
-          id="amount"
-          value={transaction.amount}
-          type="number"
-          onChange={handleNumberChange}
-          placeholder="Amount"
-          required
-        />
-        <label htmlFor="date">Date:</label>
+        <fieldset>
+        <label htmlFor="date">Date</label>
+        <br/>
         <input
           id="date"
           value={transaction.date}
@@ -77,7 +61,31 @@ function EditTransaction() {
           placeholder="Date"
           required
         />
-        <label htmlFor="from">From Who?:</label>
+         <br />
+        <label htmlFor="transactionName">Transaction Name</label>
+        <br/>
+        <input
+          id="item_name"
+          value={transaction.item_name}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Name of Transaction"
+          required
+        />
+        <br />
+        <label htmlFor="amount">Amount</label>
+        <br/>
+        <input
+          id="amount"
+          value={transaction.amount}
+          type="number"
+          onChange={handleNumberChange}
+          placeholder="Amount"
+          required
+        />
+        <br />
+        <label htmlFor="from">From Who</label>
+        <br/>
         <input
           id="from"
           value={transaction.from}
@@ -86,7 +94,9 @@ function EditTransaction() {
           placeholder="From Who?"
           required
         />
-        <label htmlFor="category">Category:</label>
+        <br />
+        <label htmlFor="category">Category</label>
+        <br/>
         <input
           id="category"
           value={transaction.category}
@@ -96,11 +106,12 @@ function EditTransaction() {
           required
         />
         <br />
-        <input type="submit" />
-      </form>
-      {/* <Link to={`/transactions/${index}`}>
+        <input type="submit" value="Submit Edit"/>
+      <Link to={`/transactions/${index}`}>
         <button>Nevermind!</button>
-      </Link> */}
+      </Link>
+        </fieldset>
+      </form>
     </div>
   );
 }
