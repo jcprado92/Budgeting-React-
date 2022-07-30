@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
-
+import "./NewTransaction.css"
 
 const API = process.env.REACT_APP_API_URL
 
@@ -39,7 +39,7 @@ function NewTransaction() {
   }
   
   return (
-    <div>
+    <div className='new'>
       <form onSubmit={handleSubmit}>
         <fieldset>
         <label htmlFor="date">Date </label>
@@ -95,11 +95,11 @@ function NewTransaction() {
         required/>
         <br />
         <input type="submit" value="Submit New Transaction" />
-        </fieldset>
-      </form>
       <Link to={`/transactions`}> 
         <button>Nevermind!</button>
        </Link>
+        </fieldset>
+      </form>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import "./TransactionDetails.css"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,7 +26,7 @@ function TransactionDetails() {
 
 
   return (
-    <div>
+    <div className="details">
       <p>Transaction Name: {transaction.item_name}</p>
       <p>Amount: {transaction.amount}</p>
       <p>Transaction Date: {transaction.date}</p>

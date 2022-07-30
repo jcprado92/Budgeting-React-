@@ -17,9 +17,9 @@ function Transactions() {
   }, []);
 
   return(
-  <div className="transactions">
-    <AccountTotal transactions={transactions}/>
-    <section className="transaction-container">{transactions.map((transaction, index) => {
+  <div className="trans-page">
+    <AccountTotal transactions={transactions} className="total"/>
+    <section className="transactions">{transactions.map((transaction, index) => {
         return <Transaction key={index} transaction={transaction} index={index}/>})}</section>
   </div>
   ) 
