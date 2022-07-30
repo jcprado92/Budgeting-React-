@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 
 
@@ -16,6 +16,7 @@ function NewTransaction() {
     category: ""
   })
 
+  
   const navigate = useNavigate()
 
   const addTransaction = () => {
@@ -96,9 +97,9 @@ function NewTransaction() {
         <input type="submit" value="Submit New Transaction" />
         </fieldset>
       </form>
-      {/* <Link to={`/transactions/${index}`}> 
+      <Link to={`/transactions`}> 
         <button>Nevermind!</button>
-       </Link> */}
+       </Link>
     </div>
   )
 }
