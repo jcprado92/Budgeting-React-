@@ -40,6 +40,7 @@ function NewTransaction() {
   
   return (
     <div className='new'>
+      <h3>Create A New Transaction Below</h3>
       <form onSubmit={handleSubmit}>
         <fieldset>
         <label htmlFor="date">Date </label>

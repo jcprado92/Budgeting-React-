@@ -50,6 +50,7 @@ function EditTransaction() {
 
   return (
     <div className="edit">
+      <h3>Edit This Transaction Below</h3>
       <form onSubmit={handleSubmit}>
         <fieldset>
         <label htmlFor="date">Date</label>
