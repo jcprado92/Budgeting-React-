@@ -5,7 +5,9 @@ import Transaction from "./Transaction";
 import AccountTotal from "./AccountTotal";
 import "./Transactions.css"
 
+
 const API = process.env.REACT_APP_API_URL;
+
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
 

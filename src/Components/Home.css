@@ -1,4 +1,5 @@
 .home {
     text-align: center;
-    
+    background-image: url("../Images/Great\ Wave.jpeg"); 
+    height: 90vh
 }
