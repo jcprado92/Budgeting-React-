@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Nav className="nav" />
+        <Nav />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
